@@ -1,12 +1,15 @@
 import time
 import numpy as np
 
+# Parse distance matrix
 def read_distance_matrix(filename):
     with open(filename) as f:
         n = int(next(f).strip())  
         D = [[float(x) for x in line.split()] for line in f]
     return np.array(D)
 
+
+# Generator for combinations of a specific length from the iterable.
 def combinations(iterable, r):
     pool = tuple(iterable)
     n = len(pool)
@@ -25,6 +28,8 @@ def combinations(iterable, r):
             indices[j] = indices[j-1] + 1
         yield tuple(pool[i] for i in indices)
 
+
+# Held-Karp algorithm
 def held_karp(D):
     n = len(D)
     C = {}
@@ -43,12 +48,13 @@ def held_karp(D):
                         continue
                     res.append((C[(prev, m)][0] + D[m][k], m))
                 C[(bits, k)] = min(res)
-    bits = (2 ** n - 1) - 1  # Includes parking space codes for all cities except the starting city
+    bits = (2 ** n - 1) - 1  # Bitmask for all cities except the starting city
     res = []
     for k in range(1, n):
         res.append((C[(bits, k)][0] + D[k][0], k))
     opt, parent = min(res)
 
+    # Reconstructing the path
     path = [0]
     for i in range(n - 1):
         path.append(parent)
@@ -59,7 +65,7 @@ def held_karp(D):
 
     return opt, path
 
-
+# main
 filenames = [
         "tsp-problem-10-20-50-10-1.txt",
         "tsp-problem-10-20-50-10-2.txt",
