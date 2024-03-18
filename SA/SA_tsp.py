@@ -61,7 +61,6 @@ if __name__ == "__main__":
         "tsp-problem-12-20-50-10-1.txt",
         "tsp-problem-13-20-50-10-1.txt",
         "tsp-problem-14-20-50-10-1.txt",
-        "tsp-problem-15-20-50-10-1.txt",
     ]
     
     ans = []
