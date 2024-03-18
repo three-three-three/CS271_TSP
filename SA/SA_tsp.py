@@ -53,30 +53,38 @@ def simulated_annealing(D, T_initial=10000, T_min=1, alpha=0.99, MAX_ITER=100):
 
 if __name__ == "__main__":
     filenames = [
+        "tsp-problem-7-20-50-10-1.txt",
+        "tsp-problem-8-20-50-10-1.txt",
+        "tsp-problem-9-20-50-10-1.txt",
         "tsp-problem-10-20-50-10-1.txt",
-        "tsp-problem-10-20-50-10-2.txt",
-        "tsp-problem-10-20-50-10-3.txt",
-        "tsp-problem-10-20-50-10-4.txt",
-        "tsp-problem-10-20-50-10-5.txt",
-        "tsp-problem-20-80-50-10-1.txt",
-        "tsp-problem-20-80-50-10-2.txt",
-        "tsp-problem-20-80-50-10-3.txt",
-        "tsp-problem-20-80-50-10-4.txt",
-        "tsp-problem-20-80-50-10-5.txt"
+        "tsp-problem-11-20-50-10-1.txt",
+        "tsp-problem-12-20-50-10-1.txt",
+        "tsp-problem-13-20-50-10-1.txt",
+        "tsp-problem-14-20-50-10-1.txt",
+        "tsp-problem-15-20-50-10-1.txt",
     ]
     
+    ans = []
+    times = []
 
     for filename in filenames:
         start_time = time.time()
-
+        filename = f"Archive/{filename}"
         D = read_distance_matrix(filename)
 
         solution, distance = simulated_annealing(D)
         elapsed_time = time.time() - start_time # Calculate elapsed time
+        times.append(round(elapsed_time, 3))
+
+        distance_rounded = round(distance, 3)
+        ans.append(distance_rounded)
 
         print(f"Filename: {filename}")
         print("Final solution:", solution)
-        print("Total distance:", distance)
+        print("Total distance:", distance_rounded)
         print(f"Elapsed time: {elapsed_time:.2f} seconds")
         print("-" * 40)  
+    
+    print(ans)
+    print(times)
 

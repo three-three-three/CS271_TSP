@@ -67,27 +67,34 @@ def held_karp(D):
 
 # main
 filenames = [
+        "tsp-problem-7-20-50-10-1.txt",
+        "tsp-problem-8-20-50-10-1.txt",
+        "tsp-problem-9-20-50-10-1.txt",
         "tsp-problem-10-20-50-10-1.txt",
-        "tsp-problem-10-20-50-10-2.txt",
-        "tsp-problem-10-20-50-10-3.txt",
-        "tsp-problem-10-20-50-10-4.txt",
-        "tsp-problem-10-20-50-10-5.txt",
-        "tsp-problem-20-80-50-10-1.txt",
-        "tsp-problem-20-80-50-10-2.txt",
-        "tsp-problem-20-80-50-10-3.txt",
-        "tsp-problem-20-80-50-10-4.txt",
-        "tsp-problem-20-80-50-10-5.txt"
+        "tsp-problem-11-20-50-10-1.txt",
+        "tsp-problem-12-20-50-10-1.txt",
+        "tsp-problem-13-20-50-10-1.txt",
+        "tsp-problem-14-20-50-10-1.txt",
+        "tsp-problem-15-20-50-10-1.txt",
     ]
+
+ans = []
+times = []
 
 for filename in filenames:
     start_time = time.time()
+    filename = f"Archive/{filename}"
     D = read_distance_matrix(filename)
     # Held-Karp
     opt, path = held_karp(D)
     elapsed_time = time.time() - start_time
+    ans.append(round(opt, 3))
+    times.append(round(elapsed_time, 3))
 
     print(f"Filename: {filename}")
     print("Opt solution:", path)
     print("Total distance:", opt)
     print(f"Elapsed time: {elapsed_time:.2f} seconds")
     print("-" * 40)
+print(ans)
+print(times)
