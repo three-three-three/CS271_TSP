@@ -26,7 +26,7 @@ run `python3 perf_SA_DP.py`
 
 it will show a figure of these 2 method's performances based on the input parameters `N = 10, K = 20, U = 50, V = 10` and `N = 20, K = 80, U = 50, V = 10`. 
 
-![result](SA/Figure_SA_DP.png)
+![result](Output_Fig/Figure_SA_DP_7-14.png)
 
 If you get different results from different parameters, just modify the `# input params` and `# results of SA and DP` parts in `perf_SA_DP.py`.
 
