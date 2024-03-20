@@ -53,14 +53,11 @@ def simulated_annealing(D, T_initial=10000, T_min=1, alpha=0.99, MAX_ITER=100):
 
 if __name__ == "__main__":
     filenames = [
-        "tsp-problem-7-20-50-10-1.txt",
-        "tsp-problem-8-20-50-10-1.txt",
-        "tsp-problem-9-20-50-10-1.txt",
-        "tsp-problem-10-20-50-10-1.txt",
-        "tsp-problem-11-20-50-10-1.txt",
-        "tsp-problem-12-20-50-10-1.txt",
-        "tsp-problem-13-20-50-10-1.txt",
-        "tsp-problem-14-20-50-10-1.txt",
+        "tsp-problem-30-20-50-10-1.txt",
+        "tsp-problem-35-20-50-10-1.txt",
+        "tsp-problem-40-20-50-10-1.txt",
+        "tsp-problem-45-20-50-10-1.txt",
+        "tsp-problem-50-20-50-10-1.txt",
     ]
     
     ans = []
