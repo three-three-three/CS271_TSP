@@ -67,14 +67,17 @@ def held_karp(D):
 
 # main
 filenames = [
-        "tsp-problem-7-20-50-10-1.txt",
-        "tsp-problem-8-20-50-10-1.txt",
-        "tsp-problem-9-20-50-10-1.txt",
         "tsp-problem-10-20-50-10-1.txt",
         "tsp-problem-11-20-50-10-1.txt",
         "tsp-problem-12-20-50-10-1.txt",
         "tsp-problem-13-20-50-10-1.txt",
         "tsp-problem-14-20-50-10-1.txt",
+        "tsp-problem-15-20-50-10-1.txt",
+        "tsp-problem-16-20-50-10-1.txt",
+        "tsp-problem-17-20-50-10-1.txt",
+        "tsp-problem-18-20-50-10-1.txt",
+        "tsp-problem-19-20-50-10-1.txt",
+        "tsp-problem-20-20-50-10-1.txt",
     ]
 
 ans = []
